@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "Local": "server=localhost;userid=USUARIO;password=SENHA;database=crud"
+  }
+}
