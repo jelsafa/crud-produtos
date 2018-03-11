@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "Local": "server=localhost;userid=sa;password=hjfr458#TT8$;database=crud"
+    "Local": "server=localhost;userid=USUARIO;password=SENHA;database=crud"
   }
 }
