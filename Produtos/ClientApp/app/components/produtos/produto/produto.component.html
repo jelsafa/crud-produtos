@@ -1,0 +1,29 @@
+<h1>Produto</h1>
+
+<hr />
+
+<p class="text-center" *ngIf="carregando">Carregando produto...</p>
+
+<div *ngIf="produto">
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" class="form-control" [(ngModel)]="produto.nome">
+    </div>
+    <div class="form-group">
+        <label>Quantidade</label>
+        <input type="number" class="form-control" [(ngModel)]="produto.quantidade">
+    </div>
+    <div class="form-group">
+        <label>Valor</label>
+        <input type="number" class="form-control" [(ngModel)]="produto.valor">
+    </div>
+    <p>
+        <button class="btn btn-primary pull-right" (click)="salvarProduto()">Salvar</button>
+        <button class="btn btn-default" (click)="voltarProdutos()">Voltar</button>
+    </p>
+    <div *ngIf="!!mensagem" class="panel panel-warning">
+        <div class="panel-body">
+            {{ mensagem }}
+        </div>
+    </div>
+</div>

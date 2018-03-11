@@ -1,0 +1,37 @@
+<h1>Lista de Produtos</h1>
+
+<hr />
+
+<p>
+    <button class="btn btn-default" (click)="novoProduto()">Novo produto</button>
+</p>
+
+<p class="text-center" *ngIf="carregando">Carregando produtos...</p>
+
+<p class="text-center" *ngIf="!produtos || !produtos.length"><em>Clique em "Novo Produto" para adicionar um produto...</em></p>
+
+<table class='table' *ngIf="produtos.length">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nome</th>
+            <th>Quantidade</th>
+            <th>Valor</th>
+            <th>Valor Total</th>
+            <th style="width: 200px"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let produto of produtos">
+            <td>{{ produto.id }}</td>
+            <td>{{ produto.nome }}</td>
+            <td>{{ produto.quantidade }}</td>
+            <td>{{ produto.valor | currency: 'BRL' : 2 }}</td>
+            <td>{{ produto.valor * produto.quantidade | currency: 'BRL' : 2 }}</td>
+            <td class="text-center">
+                <button class="btn btn-default" (click)="editarProduto(produto.id)">Editar</button>
+                <button class="btn btn-default" (click)="deletarProduto(produto.id)">Remover</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
